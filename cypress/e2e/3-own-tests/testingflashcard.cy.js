@@ -4,6 +4,7 @@ describe('Creating Flashcard', () => {
       cy.get('#question').type('How long did u have for this Task?');
       cy.get('#answer').type('way to long!!!!!');
       cy.get('#add-card-button').click();
+      cy.get('#card-0').should('exist');
     });
   });
 
@@ -20,6 +21,7 @@ describe('Editing Flashcards', () => {
       cy.get('#input-answer-0').clear();
       cy.get('#input-answer-0').type('4 Days');
       cy.get('#save-edit-button-0').click();
+      cy.get('#card-question-0').should('exist');
    });
   });
 
@@ -31,6 +33,7 @@ describe('Editing Flashcards', () => {
       cy.get('#add-card-button').click();
       cy.get('#rate-good-button-0').click();
       cy.get('#delete-card-button-0').click();
+      cy.get('#card-question-0').should('not.exist');
    });
   });
 
